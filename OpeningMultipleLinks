@@ -1,0 +1,9 @@
+Sub OpenLinks()
+    Dim Cell As Range
+    Set LinkRng = Range("A1").CurrentRegion.Columns(1)
+    On Error Resume Next
+    For Each Cell In LinkRng.Cells
+        Cell.Hyperlinks(1).Follow
+    Next
+    On Error GoTo 0
+End Sub
